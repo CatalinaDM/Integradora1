@@ -132,9 +132,12 @@
                 required
               />
             </td>
-            <td>
-              <button (click)="eliminarProductoDeCompra(producto.codigo_Barras)">Eliminar</button>
-            </td>
+            <div class="compra-buttons">
+            
+              
+              <button (click)="eliminarProductoDeCompra(producto.codigo_Barras)" class="btn-eliminar">Eliminar</button>
+            
+            </div>
           </tr>
         </tbody>
       </table>

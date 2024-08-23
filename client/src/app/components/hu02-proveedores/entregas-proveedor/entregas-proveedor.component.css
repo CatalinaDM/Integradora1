@@ -88,13 +88,13 @@
 
 /* Estilos para la página de entregas */
 .entregas-content {
-    padding: 20px;
+    padding: 800px;
     background-color: #f9f9f9;
     margin: auto; /* Centra el contenedor horizontalmente */
     max-width: 900px; /* Ajusta el ancho máximo para centrado */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra más sutil */
-    margin-top: 150px; /* Ajusta el margen superior para separarlo del navbar */
+    margin-top: 800px; /* Ajusta el margen superior para separarlo del navbar */
     overflow: hidden;
 }
 
@@ -251,6 +251,20 @@
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
+}
+.eliminar {
+  background-color: #e74c3c; /* Color de fondo rojo */
+  color: white; /* Color del texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Relleno del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  font-size: 14px; /* Tamaño de la fuente */
+  transition: background-color 0.3s ease; /* Animación suave al cambiar el color */
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b; /* Color de fondo al pasar el mouse */
 }
 
 .sales-table button:hover {

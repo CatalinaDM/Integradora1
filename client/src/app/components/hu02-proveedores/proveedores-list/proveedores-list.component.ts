@@ -22,7 +22,6 @@ export class ListaProveedoresComponent implements OnInit {
   isNombreValid: boolean = true; // Variable para la validación del nombre
   isApellidoValid: boolean = true; // Variable para la validación del apellido
   isEmpresaValid: boolean = true; // Variable para la validación de la empresa
-
   constructor(private proveedorService: ProveedoresService, private loginService: LoginService) {}
 
   ngOnInit(): void {
@@ -114,6 +113,7 @@ export class ListaProveedoresComponent implements OnInit {
       this.getProveedores(); // Volver a obtener la lista actualizada
     });
   }
+ 
 
   toggleDropdown(menu: string): void {
     // Cerrar cualquier otro desplegable abierto
