@@ -16,7 +16,6 @@ import usuarioRoutes from './routes/usuarioRoutes';
 import entregasRoutes from './routes/entregasRoutes';
 import pedidosRoutes from './routes/pedidosProveedorRoutes'
 
-
 class Server{
 public app:Application;
  
