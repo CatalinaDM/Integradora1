@@ -2,102 +2,96 @@
 .logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-right: 30px;
+    justify-content: center; /* Centra el logo horizontalmente */
+    margin-right: 30px; /* Ajusta el margen para mover el contenedor a la derecha */
 }
 
 /* Estilos para el logo */
 .logo {
-    height: 50px;
-    width: auto;
+    height: 50px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción de la imagen */
 }
 
-/* Barra de navegación */
 .navbar {
     display: flex;
     flex-wrap: wrap;
-    background-color: #5b3d99; /* Color de fondo consistente */
+    background-color: #5b3d99;
     padding: 10px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    justify-content: flex-start;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade sombra para darle profundidad */
 }
 
-/* Agrupación de botones de navegación */
 .nav-group {
     position: relative;
     margin-right: 10px;
 }
 
-/* Botón de dropdown */
 .dropdown-btn {
-    background-color: #5b3d99; /* Color de fondo consistente */
+    background-color: #5b3d99;
     color: #fff;
     border: none;
-    padding: 10px 15px;
+    padding: 10px;
     text-align: center;
     cursor: pointer;
     border-radius: 5px;
     display: flex;
     align-items: center;
-    font-size: 16px;
+    font-size: 24px;
 }
 
-/* Icono dentro del botón de dropdown */
 .dropdown-btn i {
     margin-left: 5px;
 }
 
-/* Contenedor del dropdown */
 .dropdown-container {
     display: none;
-    background-color: #d0b4f1; /* Color de fondo consistente */
+    background-color: #d0b4f1;
     border-radius: 5px;
     padding: 0;
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 150px;
+    min-width: 240px;
     z-index: 1;
-    max-height: 300px;
-    overflow-y: auto;
 }
 
-/* Enlaces dentro del dropdown */
 .dropdown-container a {
     display: block;
     padding: 10px;
     color: #333;
     text-decoration: none;
     border-bottom: 1px solid #ccc;
+    font-size: 22px;
 }
 
-/* Cambio de color al pasar el mouse por encima */
+
+
 .dropdown-container a:hover {
     background-color: #bfa8e3;
 }
 
-/* Mostrar el dropdown cuando está activo */
 .dropdown-btn.active + .dropdown-container {
     display: block;
+}
+/* Ensuring responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
 }
 
 /* Estilos para la página de entregas */
 .entregas-content {
-    padding: 800px;
-    background-color: #f9f9f9;
-    margin: auto; /* Centra el contenedor horizontalmente */
-    max-width: 900px; /* Ajusta el ancho máximo para centrado */
+  
+    background-color: #fff;
+    padding: 0px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra más sutil */
-    margin-top: 800px; /* Ajusta el margen superior para separarlo del navbar */
-    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; /* Añade margen inferior para separar de los totales */
 }
-
+h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #48257f; /* Color del texto */
+  }
 /* Título de la página de entregas */
 .entregas-title {
     color: #5b3d99;
@@ -191,11 +185,16 @@
 
 /* Estilos para la tabla de productos */
 .sales-table-content {
-    background-color: #fff;
     padding: 20px;
+    background-color: #f9f9f9;
+    margin: auto; /* Centra el contenedor horizontalmente */
+    max-width: 1200px; /* Ajusta el ancho máximo para centrado */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px; /* Añade margen inferior para separar de los totales */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra más sutil */
+    margin-top: 80px; /* Ajusta el margen superior para separarlo del navbar */
+    overflow: hidden;
+    
+  
 }
 
 /* Contenedor de la tabla para permitir el scroll horizontal */
@@ -229,7 +228,7 @@
 }
 
 .entregas-buttons button, .sales-table-content button {
-    background-color: #5b3d99;
+    background-color: #D291BC;
     color: white;
     padding: 12px 24px; /* Aumenta el padding para botones más visibles */
     border: none;
@@ -239,7 +238,7 @@
 }
 
 .entregas-buttons button:hover, .sales-table-content button:hover {
-    background-color: #48257f;
+    background-color: #D291BC;
 }
 
 /* Botón de eliminar en la tabla */
@@ -251,20 +250,6 @@
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-}
-.eliminar {
-  background-color: #e74c3c; /* Color de fondo rojo */
-  color: white; /* Color del texto blanco */
-  border: none; /* Sin borde */
-  padding: 10px 20px; /* Relleno del botón */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor a pointer */
-  font-size: 14px; /* Tamaño de la fuente */
-  transition: background-color 0.3s ease; /* Animación suave al cambiar el color */
-}
-
-.btn-eliminar:hover {
-  background-color: #c0392b; /* Color de fondo al pasar el mouse */
 }
 
 .sales-table button:hover {
