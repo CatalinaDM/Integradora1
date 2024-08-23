@@ -160,7 +160,7 @@ export class PedidosProveedorComponent implements OnInit {
   
 
   eliminarProductoDeCompra(idProducto: number): void {
-    this.compra.detalles = this.compra.detalles.filter(detalle => detalle.id_Producto !== idProducto);
+    this.compra.detalles = this.compra.detalles.filter(detalle => detalle.codigo_Barras !== idProducto);
     this.calcularTotales();
   }
 

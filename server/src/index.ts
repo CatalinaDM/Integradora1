@@ -15,8 +15,6 @@ import inventarioRoutes from './routes/inventarioRoutes';
 import usuarioRoutes from './routes/usuarioRoutes';
 import entregasRoutes from './routes/entregasRoutes';
 import pedidosRoutes from './routes/pedidosProveedorRoutes'
-import { enviarCorreo } from './controllers/pedidoProveedorControllers';
-
 
 class Server{
 public app:Application;

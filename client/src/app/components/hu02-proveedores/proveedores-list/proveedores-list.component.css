@@ -2,44 +2,39 @@
 .logo-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-right: 20px;
+  justify-content: center; /* Centra el logo horizontalmente */
+  margin-right: 30px; /* Ajusta el margen para mover el contenedor a la derecha */
 }
 
 /* Estilos para el logo */
 .logo {
-  height: 40px;
-  width: auto;
+  height: 50px; /* Ajusta la altura del logo */
+  width: auto; /* Mantiene la proporción de la imagen */
 }
 
 .navbar {
   display: flex;
   flex-wrap: wrap;
   background-color: #5b3d99;
-  padding: 8px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  justify-content: flex-start;
-  align-items: center;
+  padding: 10px;
 }
 
 .nav-group {
   position: relative;
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 .dropdown-btn {
   background-color: #5b3d99;
   color: #fff;
   border: none;
-  padding: 8px;
+  padding: 10px;
   text-align: center;
   cursor: pointer;
   border-radius: 5px;
   display: flex;
   align-items: center;
+  font-size: 24px;
 }
 
 .dropdown-btn i {
@@ -54,19 +49,20 @@
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 140px;
+  min-width: 240px;
   z-index: 1;
-  max-height: 250px;
-  overflow-y: auto;
 }
 
 .dropdown-container a {
   display: block;
-  padding: 8px;
+  padding: 10px;
   color: #333;
   text-decoration: none;
   border-bottom: 1px solid #ccc;
+  font-size: 22px;
 }
+
+
 
 .dropdown-container a:hover {
   background-color: #bfa8e3;
@@ -74,6 +70,12 @@
 
 .dropdown-btn.active + .dropdown-container {
   display: block;
+}
+/* Ensuring responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+  }
 }
 
 /* Estilos para los mensajes de advertencia */
@@ -85,20 +87,32 @@
 
 /* Estilos para los botones de búsqueda y agregar */
 .search-button, .add-button {
-  background-color: #5b3d99; /* Color de fondo del botón */
+  background-color: #D291BC;
   color: #fff; /* Color del texto del botón */
   border: none;
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
 }
+.proveedor-table-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin: auto; /* Centra el contenedor horizontalmente */
+  max-width: 1200px; /* Ajusta el ancho máximo para centrado */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra más sutil */
+  margin-top: 80px; /* Ajusta el margen superior para separarlo del navbar */
+  overflow: hidden;
+  
+
+}
 
 .search-button:hover, .add-button:hover {
-  background-color: #4a2a7e; /* Color de fondo del botón al pasar el ratón */
+  background-color: #b87da4; /* Color de fondo del botón al pasar el ratón */
 }
 /* Botón de agregar */
 .add-button {
-  background-color: #5b3d99; /* Color de fondo */
+  background-color: #D291BC; /* Color de fondo */
   color: white;
   padding: 8px 12px;
   border: none;
@@ -111,7 +125,7 @@
 }
 
 .add-button:hover {
-  background-color: #48257f; /* Color de fondo al pasar el mouse */
+  background-color: #b87da4; /* Color de fondo al pasar el mouse */
 }
 /* Estilos para los inputs del formulario */
 .search-input, .edit-input, .add-input {
@@ -139,7 +153,7 @@
 
 /* Botón de agregar */
 .add-button {
-  background-color: #5b3d99; /* Color de fondo */
+  background-color: #D291BC; /* Color de fondo */
   color: white;
   padding: 8px 12px;
   border: none;
@@ -151,7 +165,7 @@
 }
 
 .add-button:hover {
-  background-color: #48257f; /* Color de fondo al pasar el mouse */
+  background-color: #b87da4; /* Color de fondo al pasar el mouse */
 }
 
 /* Estilos para la tabla de proveedores */
@@ -182,7 +196,7 @@ table tbody tr:hover {
 
 /* Estilos para los botones de editar y eliminar */
 .edit-button, .delete-button, .save-button {
-  background-color: #5b3d99;
+  background-color: #D291BC;
   color: #fff;
   border: none;
   padding: 8px 12px;
@@ -190,9 +204,13 @@ table tbody tr:hover {
   cursor: pointer;
   font-size: 14px;
 }
+.save-button {
+  margin-left: 35px;
+  margin-right: auto;
+}
 
 .edit-button:hover, .delete-button:hover, .save-button:hover {
-  background-color: #4a2a7e; /* Color de fondo al pasar el ratón */
+  background-color: #D291BC; /* Color de fondo al pasar el ratón */
 }
 
 /* Estilos específicos para botones */
@@ -276,7 +294,7 @@ h2 {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
- background-color: #5b3d99; /* Color de fondo */
+  background-color: #D291BC;/* Color de fondo */
   color: white;
   display: flex;
   align-items: center;
@@ -287,5 +305,5 @@ h2 {
 }
 
 .search-button:hover {
-  background-color: #48257f; /* Color de fondo al pasar el mouse */
+  background-color: #b87da4; /* Color de fondo al pasar el mouse */
 }

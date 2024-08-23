@@ -1,14 +1,22 @@
 <div class="navbar">
-  <!-- Logo Redirigiendo al MENU -->
+  <!-- Logo Redirigiendo al Inicio de Sesión -->
   <a href="/menu" class="logo-link">
-    <img src="https://images.vexels.com/content/200165/preview/store-icon-stroke-bb4ae2.png" alt="Logo Abarrotes el Perrón" class="logo">
+      <img src="https://images.vexels.com/content/200165/preview/store-icon-stroke-bb4ae2.png" alt="Logo Abarrotes el Perrón" class="logo">
   </a>
-  
+<div class="navbar">
   <div class="nav-group">
-    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['ventas-compras']}" (click)="toggleDropdown('ventas-compras')">
-      Ventas & Compras <i class="fas fa-chevron-down"></i>
+    <button 
+      class="dropdown-btn" 
+      [ngClass]="{'active': dropdownOpen['ventas-compras']}" 
+      (click)="toggleDropdown('ventas-compras')"
+    >
+      Ventas & Compras
+      <i class="fas fa-chevron-down"></i>
     </button>
-    <div class="dropdown-container" *ngIf="dropdownOpen['ventas-compras']">
+    <div 
+      class="dropdown-container" 
+      *ngIf="dropdownOpen['ventas-compras']"
+    >
       <a routerLink="/principal"><i class="fas fa-home"></i> Ventas</a>
       <a routerLink="/pedidosaproveedor"><i class="fas fa-shopping-cart"></i> Compras</a>
       <a routerLink="/facturas"><i class="fas fa-file-invoice"></i> Factura</a>
@@ -16,20 +24,36 @@
   </div>
   
   <div class="nav-group">
-    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['proveedores-entregas']}" (click)="toggleDropdown('proveedores-entregas')">
-      Proveedores & Entregas <i class="fas fa-chevron-down"></i>
+    <button 
+      class="dropdown-btn" 
+      [ngClass]="{'active': dropdownOpen['proveedores-entregas']}" 
+      (click)="toggleDropdown('proveedores-entregas')"
+    >
+      Proveedores & Entregas
+      <i class="fas fa-chevron-down"></i>
     </button>
-    <div class="dropdown-container" *ngIf="dropdownOpen['proveedores-entregas']">
+    <div 
+      class="dropdown-container" 
+      *ngIf="dropdownOpen['proveedores-entregas']"
+    >
       <a routerLink="/proveedores"><i class="fas fa-truck"></i> Proveedores</a>
       <a routerLink="/entregasproveedor"><i class="fas fa-shipping-fast"></i> Entregas</a>
     </div>
   </div>
   
   <div class="nav-group">
-    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['inventarios-reportes']}" (click)="toggleDropdown('inventarios-reportes')">
-      Inventarios & Reportes <i class="fas fa-chevron-down"></i>
+    <button 
+      class="dropdown-btn" 
+      [ngClass]="{'active': dropdownOpen['inventarios-reportes']}" 
+      (click)="toggleDropdown('inventarios-reportes')"
+    >
+      Inventarios & Reportes
+      <i class="fas fa-chevron-down"></i>
     </button>
-    <div class="dropdown-container" *ngIf="dropdownOpen['inventarios-reportes']">
+    <div 
+      class="dropdown-container" 
+      *ngIf="dropdownOpen['inventarios-reportes']"
+    >
       <a routerLink="/inventarios"><i class="fas fa-boxes"></i> Inventarios</a>
       <a routerLink="/cortedecaja"><i class="fas fa-cash-register"></i> Corte Caja</a>
       <a routerLink="/reportes"><i class="fas fa-chart-line"></i> Informes</a>
@@ -37,23 +61,34 @@
   </div>
   
   <div class="nav-group">
-    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['otros']}" (click)="toggleDropdown('otros')">
-      Otros <i class="fas fa-chevron-down"></i>
+    <button 
+      class="dropdown-btn" 
+      [ngClass]="{'active': dropdownOpen['otros']}" 
+      (click)="toggleDropdown('otros')"
+    >
+      Otros
+      <i class="fas fa-chevron-down"></i>
     </button>
-    <div class="dropdown-container" *ngIf="dropdownOpen['otros']">
+    <div 
+      class="dropdown-container" 
+      *ngIf="dropdownOpen['otros']"
+    >
      <a routerLink="/ventas"><i class="fas fa-ticket-alt"></i> Ticket</a>
-    <a routerLink="/listausuario"><i class="fas fa-users"></i> Agregar Usuario</a>
+      <a routerLink="/listausuario"><i class="fas fa-users"></i> Agregar Usuario</a>
       <a routerLink="/productos"><i class="fas fa-box"></i> Agregar Productos</a>
       <a routerLink="/categoria"><i class="fas fa-tags"></i> Categorías</a>
-      <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+  <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
     </div>
   </div>
 </div>
-<div class="main-container">
+</div>
+
+<div class="proveedor-table-container">
+<div class="proveedor-container">
   <div class="container">
     <h2>Lista de Proveedores</h2>
     
-    <!-- Campo para buscar categorías -->
+    <!-- Campo para buscar proveedor -->
     <div class="search-container">
       <div class="search-input-container">
         <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar por nombre" class="search-input" (input)="searchProveedores()">
@@ -63,7 +98,7 @@
       </div>
     </div>
 
-    <!-- Campo para agregar una nueva categoría -->
+    <!-- Campo para agregar un nuevo proveedor -->
     <div class="add-container">
       <div>
         <p>Nombre del proveedor:</p>
@@ -94,53 +129,55 @@
       </button>
     </div>
     
+ <!-- Tabla de proveedores -->
+ <table>
+  <thead>
+    <tr>
+      <th>Nombre(s)</th>
+      <th>Apellido(s)</th>
+      <th>Teléfono</th>
+      <th>Correo Electrónico</th>
+      <th>Editar</th>
+     <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let proveedor of proveedores">
+      <td>
+        <ng-container *ngIf="!proveedor.editing">{{ proveedor.nombre }}</ng-container>
+        <ng-container *ngIf="proveedor.editing">
+          <input [(ngModel)]="proveedor.nombre" class="edit-input" required>
+        </ng-container>
+      </td>
+      <td>
+        <ng-container *ngIf="!proveedor.editing">{{ proveedor.apellidos }}</ng-container>
+        <ng-container *ngIf="proveedor.editing">
+          <input [(ngModel)]="proveedor.apellidos" class="edit-input" required>
+        </ng-container>
+      </td>
+      <td>
+        <ng-container *ngIf="!proveedor.editing">{{ proveedor.email }}</ng-container>
+        <ng-container *ngIf="proveedor.editing">
+          <input [(ngModel)]="proveedor.email" class="edit-input" required email>
+        </ng-container>
+      </td>
+      <td>
+        <ng-container *ngIf="!proveedor.editing">{{ proveedor.empresa }}</ng-container>
+        <ng-container *ngIf="proveedor.editing">
+          <input [(ngModel)]="proveedor.empresa" class="edit-input" required>
+        </ng-container>
+      </td>
+      <td>
+        <button (click)="editProveedor(proveedor)" class="edit-button">✎</button>
+      </td>
+      <td>
+        <button (click)="deleteProveedor(proveedor.id_Proveedor!)" class="delete-button">🗑</button>
+      </td>
+     <td><button (click)="saveProveedor(proveedor)" class="save-button">Guardar</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
 
-    <!-- Tabla de proveedores -->
-    <table>
-      <thead>
-        <tr>
-          <th>Nombre(s)</th>
-          <th>Apellido(s)</th>
-          <th>Teléfono</th>
-          <th>Correo Electrónico</th>
-          <th>Editar</th>
-         <th>Eliminar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let proveedor of proveedores">
-          <td>
-            <ng-container *ngIf="!proveedor.editing">{{ proveedor.nombre }}</ng-container>
-            <ng-container *ngIf="proveedor.editing">
-              <input [(ngModel)]="proveedor.nombre" class="edit-input" required>
-            </ng-container>
-          </td>
-          <td>
-            <ng-container *ngIf="!proveedor.editing">{{ proveedor.apellidos }}</ng-container>
-            <ng-container *ngIf="proveedor.editing">
-              <input [(ngModel)]="proveedor.apellidos" class="edit-input" required>
-            </ng-container>
-          </td>
-          <td>
-            <ng-container *ngIf="!proveedor.editing">{{ proveedor.email }}</ng-container>
-            <ng-container *ngIf="proveedor.editing">
-              <input [(ngModel)]="proveedor.email" class="edit-input" required email>
-            </ng-container>
-          </td>
-          <td>
-            <ng-container *ngIf="!proveedor.editing">{{ proveedor.empresa }}</ng-container>
-            <ng-container *ngIf="proveedor.editing">
-              <input [(ngModel)]="proveedor.empresa" class="edit-input" required>
-            </ng-container>
-          </td>
-          <td>
-            <button (click)="editProveedor(proveedor)" class="edit-button">✎</button>
-          </td>
-          <td>
-            <button (click)="deleteProveedor(proveedor.id_Proveedor!)" class="delete-button">🗑</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
